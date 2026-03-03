@@ -23,47 +23,96 @@ class BasketballPointsCounter extends StatelessWidget {
             style: TextStyle(fontSize: 24),
           ),
         ),
-        body: Column(
+        body: Row(
           children: [
-            Text(
-              'Team A',
-              style: TextStyle(
-                fontSize: 54,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
+            Column(
+              children: [
+                Text(
+                  'Team A',
+                  style: TextStyle(
+                    fontSize: 54,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  '0',
+                  style: TextStyle(
+                    fontSize: 44,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 45),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Add 1 Points',
+                    style: TextStyle(fontSize: 14, color: Colors.black),
+                  ),
+                ),
+                SizedBox(height: 25),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Add 5 Points',
+                    style: TextStyle(fontSize: 14, color: Colors.black),
+                  ),
+                ),
+                SizedBox(height: 25),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Add 10 Points',
+                    style: TextStyle(fontSize: 14, color: Colors.black),
+                  ),
+                ),
+              ],
             ),
-            Text(
-              '0',
-              style: TextStyle(
-                fontSize: 44,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 45),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'Add 1 Points',
-                style: TextStyle(fontSize: 14, color: Colors.black),
-              ),
-            ),
-            SizedBox(height: 25),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'Add 5 Points',
-                style: TextStyle(fontSize: 14, color: Colors.black),
-              ),
-            ),
-            SizedBox(height: 25),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'Add 10 Points',
-                style: TextStyle(fontSize: 14, color: Colors.black),
-              ),
+
+            Column(
+              children: [
+                Text(
+                  'Team B',
+                  style: TextStyle(
+                    fontSize: 54,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  '0',
+                  style: TextStyle(
+                    fontSize: 44,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 45),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Add 1 Points',
+                    style: TextStyle(fontSize: 14, color: Colors.black),
+                  ),
+                ),
+                SizedBox(height: 25),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Add 5 Points',
+                    style: TextStyle(fontSize: 14, color: Colors.black),
+                  ),
+                ),
+                SizedBox(height: 25),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Add 10 Points',
+                    style: TextStyle(fontSize: 14, color: Colors.black),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
