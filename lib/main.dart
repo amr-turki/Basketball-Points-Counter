@@ -9,6 +9,21 @@ class BasketballPointsCounter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          centerTitle: true,
+
+          backgroundColor: Colors.amber,
+
+          title: Text(
+            'Basketball Points Counter',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
+      ),
+    );
   }
 }
