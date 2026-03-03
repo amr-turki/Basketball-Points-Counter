@@ -62,12 +62,14 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                         SizedBox(height: 45),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(12),
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
                           onPressed: () {
-                            TeamAPoints++;
-                            setState(() {});
+                            setState(() {
+                              TeamAPoints++;
+                            });
                           },
                           child: Text(
                             'Add 1 Points',
@@ -77,12 +79,14 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                         SizedBox(height: 25),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(12),
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
                           onPressed: () {
-                            TeamAPoints += 5;
-                            setState(() {});
+                            setState(() {
+                              TeamAPoints += 5;
+                            });
                           },
                           child: Text(
                             'Add 5 Points',
@@ -92,12 +96,14 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                         SizedBox(height: 25),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(12),
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
                           onPressed: () {
-                            TeamAPoints += 10;
-                            setState(() {});
+                            setState(() {
+                              TeamAPoints += 10;
+                            });
                           },
                           child: Text(
                             'Add 10 Points',
@@ -109,14 +115,8 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                   ),
 
                   SizedBox(
-                    height: 200,
-                    child: VerticalDivider(
-                      indent: 10,
-                      endIndent: 15,
-
-                      thickness: 1,
-                      color: Colors.amber,
-                    ),
+                    height: 400,
+                    child: VerticalDivider(thickness: 1, color: Colors.amber),
                   ),
                   SizedBox(
                     height: 500,
@@ -141,12 +141,14 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                         SizedBox(height: 45),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(12),
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
                           onPressed: () {
-                            TeamBPoints++;
-                            setState(() {});
+                            setState(() {
+                              TeamBPoints++;
+                            });
                           },
                           child: Text(
                             'Add 1 Points',
@@ -156,12 +158,14 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                         SizedBox(height: 25),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(12),
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
                           onPressed: () {
-                            TeamBPoints += 5;
-                            setState(() {});
+                            setState(() {
+                              TeamBPoints += 5;
+                            });
                           },
                           child: Text(
                             'Add 5 Points',
@@ -171,12 +175,14 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                         SizedBox(height: 25),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(12),
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
                           onPressed: () {
-                            TeamBPoints += 10;
-                            setState(() {});
+                            setState(() {
+                              TeamBPoints += 10;
+                            });
                           },
                           child: Text(
                             'Add 10 Points',
@@ -191,13 +197,15 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.all(12),
                 backgroundColor: Colors.amber,
                 minimumSize: Size(150, 70),
               ),
               onPressed: () {
-                TeamAPoints = 0;
-                TeamBPoints = 0;
-                setState(() {});
+                setState(() {
+                  TeamAPoints = 0;
+                  TeamBPoints = 0;
+                });
               },
               child: Text(
                 'Reset',
