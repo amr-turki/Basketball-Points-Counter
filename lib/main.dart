@@ -5,8 +5,17 @@ void main() {
   runApp(const BasketballPointsCounter());
 }
 
-class BasketballPointsCounter extends StatelessWidget {
+class BasketballPointsCounter extends StatefulWidget {
   const BasketballPointsCounter({super.key});
+
+  @override
+  State<BasketballPointsCounter> createState() =>
+      _BasketballPointsCounterState();
+}
+
+class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
+  int TeamAPoints = 0;
+  int TeamBPoints = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +36,6 @@ class BasketballPointsCounter extends StatelessWidget {
         body: Column(
           children: [
             SizedBox(
-              
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -36,7 +44,7 @@ class BasketballPointsCounter extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          'Team A',
+                          "Team A",
                           style: TextStyle(
                             fontSize: 54,
                             color: Colors.black,
@@ -44,7 +52,7 @@ class BasketballPointsCounter extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '0',
+                          "$TeamAPoints",
                           style: TextStyle(
                             fontSize: 44,
                             color: Colors.black,
@@ -57,7 +65,10 @@ class BasketballPointsCounter extends StatelessWidget {
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            TeamAPoints++;
+                            setState(() {});
+                          },
                           child: Text(
                             'Add 1 Points',
                             style: TextStyle(fontSize: 14, color: Colors.black),
@@ -69,7 +80,10 @@ class BasketballPointsCounter extends StatelessWidget {
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            TeamAPoints += 5;
+                            setState(() {});
+                          },
                           child: Text(
                             'Add 5 Points',
                             style: TextStyle(fontSize: 14, color: Colors.black),
@@ -81,7 +95,10 @@ class BasketballPointsCounter extends StatelessWidget {
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            TeamAPoints += 10;
+                            setState(() {});
+                          },
                           child: Text(
                             'Add 10 Points',
                             style: TextStyle(fontSize: 14, color: Colors.black),
@@ -114,7 +131,7 @@ class BasketballPointsCounter extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '0',
+                          "$TeamBPoints",
                           style: TextStyle(
                             fontSize: 44,
                             color: Colors.black,
@@ -127,7 +144,10 @@ class BasketballPointsCounter extends StatelessWidget {
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            TeamBPoints++;
+                            setState(() {});
+                          },
                           child: Text(
                             'Add 1 Points',
                             style: TextStyle(fontSize: 14, color: Colors.black),
@@ -139,7 +159,10 @@ class BasketballPointsCounter extends StatelessWidget {
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            TeamBPoints += 5;
+                            setState(() {});
+                          },
                           child: Text(
                             'Add 5 Points',
                             style: TextStyle(fontSize: 14, color: Colors.black),
@@ -151,7 +174,10 @@ class BasketballPointsCounter extends StatelessWidget {
                             backgroundColor: Colors.amber,
                             minimumSize: Size(50, 70),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            TeamBPoints += 10;
+                            setState(() {});
+                          },
                           child: Text(
                             'Add 10 Points',
                             style: TextStyle(fontSize: 14, color: Colors.black),
@@ -168,7 +194,11 @@ class BasketballPointsCounter extends StatelessWidget {
                 backgroundColor: Colors.amber,
                 minimumSize: Size(150, 70),
               ),
-              onPressed: () {},
+              onPressed: () {
+                TeamAPoints = 0;
+                TeamBPoints = 0;
+                setState(() {});
+              },
               child: Text(
                 'Reset',
                 style: TextStyle(fontSize: 14, color: Colors.black),
