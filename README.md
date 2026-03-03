@@ -1,16 +1,13 @@
-# basketball_points_counter
+# Basketball Points Counter
 
-A new Flutter project.
+A simple Flutter app that tracks scores for two basketball teams with a clean, split-screen interface.
 
-## Getting Started
+## Preview
 
-This project is a starting point for a Flutter application.
+A side-by-side layout for Team A and Team B with buttons to add 1, 5, or 10 points and a global reset button.
 
-A few resources to get you started if this is your first Flutter project:
+## Run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run
