@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class BasketballPointsCounter extends StatelessWidget {
           ),
         ),
         body: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Column(
               children: [
@@ -70,6 +72,13 @@ class BasketballPointsCounter extends StatelessWidget {
               ],
             ),
 
+            VerticalDivider(
+              indent: 75,
+              endIndent: 75,
+
+              thickness: 1,
+              color: Colors.amber,
+            ),
             Column(
               children: [
                 Text(
