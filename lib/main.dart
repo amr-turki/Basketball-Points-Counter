@@ -39,7 +39,7 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
               style: TextStyle(fontSize: 24),
             ),
           ),
-          body: BlocConsumer(
+          body: BlocConsumer<CounterCubit, CounterStates>(
             listener: (context, state) {
               if (state is CounterTeamAStates) {
                 TeamAPoints = BlocProvider.of<CounterCubit>(context).TeamA;
@@ -81,9 +81,9 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                                 minimumSize: Size(50, 70),
                               ),
                               onPressed: () {
-                                setState(() {
-                                  TeamAPoints++;
-                                });
+                                BlocProvider.of<CounterCubit>(
+                                  context,
+                                ).Counter('A', 1);
                               },
                               child: Text(
                                 'Add 1 Points',
@@ -101,9 +101,9 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                                 minimumSize: Size(50, 70),
                               ),
                               onPressed: () {
-                                setState(() {
-                                  TeamAPoints += 5;
-                                });
+                                BlocProvider.of<CounterCubit>(
+                                  context,
+                                ).Counter('A', 5);
                               },
                               child: Text(
                                 'Add 5 Points',
@@ -121,9 +121,9 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                                 minimumSize: Size(50, 70),
                               ),
                               onPressed: () {
-                                setState(() {
-                                  TeamAPoints += 10;
-                                });
+                                BlocProvider.of<CounterCubit>(
+                                  context,
+                                ).Counter('A', 10);
                               },
                               child: Text(
                                 'Add 10 Points',
