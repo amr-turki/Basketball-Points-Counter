@@ -45,6 +45,9 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                 TeamAPoints = BlocProvider.of<CounterCubit>(context).TeamA;
               } else if (state is CounterTeamBStates) {
                 TeamBPoints = BlocProvider.of<CounterCubit>(context).TeamB;
+              } else if (state is CounterResetStates) {
+                TeamAPoints = BlocProvider.of<CounterCubit>(context).TeamA;
+                TeamBPoints = BlocProvider.of<CounterCubit>(context).TeamB;
               }
             },
             builder: (context, state) => Column(
@@ -66,7 +69,7 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                               ),
                             ),
                             Text(
-                              "${BlocProvider.of<CounterCubit>(context).TeamA}",
+                              "${TeamAPoints}",
                               style: TextStyle(
                                 fontSize: 44,
                                 color: Colors.black,
@@ -157,7 +160,7 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                               ),
                             ),
                             Text(
-                              "$TeamBPoints",
+                              "${TeamBPoints}",
                               style: TextStyle(
                                 fontSize: 44,
                                 color: Colors.black,
@@ -172,9 +175,9 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                                 minimumSize: Size(50, 70),
                               ),
                               onPressed: () {
-                                setState(() {
-                                  TeamBPoints++;
-                                });
+                                BlocProvider.of<CounterCubit>(
+                                  context,
+                                ).Counter('B', 1);
                               },
                               child: Text(
                                 'Add 1 Points',
@@ -192,9 +195,9 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                                 minimumSize: Size(50, 70),
                               ),
                               onPressed: () {
-                                setState(() {
-                                  TeamBPoints += 5;
-                                });
+                                BlocProvider.of<CounterCubit>(
+                                  context,
+                                ).Counter('B', 5);
                               },
                               child: Text(
                                 'Add 5 Points',
@@ -212,9 +215,9 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                                 minimumSize: Size(50, 70),
                               ),
                               onPressed: () {
-                                setState(() {
-                                  TeamBPoints += 10;
-                                });
+                                BlocProvider.of<CounterCubit>(
+                                  context,
+                                ).Counter('B', 10);
                               },
                               child: Text(
                                 'Add 10 Points',
@@ -237,10 +240,7 @@ class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
                     minimumSize: Size(150, 70),
                   ),
                   onPressed: () {
-                    setState(() {
-                      TeamAPoints = 0;
-                      TeamBPoints = 0;
-                    });
+                    BlocProvider.of<CounterCubit>(context).Counter('Reset', 0);
                   },
                   child: Text(
                     'Reset',

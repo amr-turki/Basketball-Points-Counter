@@ -6,12 +6,16 @@ class CounterCubit extends Cubit<CounterStates> {
 
   int TeamA = 0;
   int TeamB = 0;
-  void Counter(String Team, int value) {
-    if (Team == 'A') {
-      TeamA += value;
+  void Counter(String Team, int? value) {
+    if (Team == 'Reset') {
+      TeamA = 0;
+      TeamB = 0;
+      emit(CounterResetStates());
+    } else if (Team == 'A') {
+      TeamA += value!;
       emit(CounterTeamAStates());
     } else if (Team == 'B') {
-      TeamB += value;
+      TeamB += value!;
       emit(CounterTeamBStates());
     }
   }
